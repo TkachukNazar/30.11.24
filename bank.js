@@ -36,14 +36,15 @@ let atm1 = {
   },
   check: function (card) {
     const number = card.number;
-    let b = 0;
+    let b = false;
     for (let i = 0; i < bank.length; i++) {
       if (card == bank[i]) {
         alert("Right card");
-        b++;
+        b = true;
+        break;
       }
     }
-    if (b > 0) {
+    if (b) {
       if (number === card.number) {
         const code = +prompt("Input code");
         if (code === card.code) {

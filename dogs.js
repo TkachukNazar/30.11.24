@@ -25,8 +25,11 @@ function Dog(name, breed, weight, speed = 0) {
   };
   this.changeSpeed = function (coef) {
     if (coef >= 0.5 && coef <= 2) {
-      if (this.weight < 25 && this.speed * coef <= 4) this.speed *= coef;
-      else if (this.weight > 25 && this.speed * coef <= 20) this.speed *= coef;
+      if (
+        (this.weight < 25 && this.speed * coef <= 4) ||
+        (this.weight > 25 && this.speed * coef <= 20)
+      )
+        this.speed *= coef;
     }
   };
   this.stop = function () {

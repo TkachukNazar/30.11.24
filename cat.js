@@ -1,10 +1,8 @@
 let cat = {
   weight: 0,
   feed: function () {
-    if (this.weight < 10) {
-      this.weight += 2;
-      alert(this);
-    }
+    this.weight += 2;
+    alert(this);
   },
   diet: function () {
     this.weight -= 2;
@@ -21,7 +19,6 @@ let cat = {
     return "weight: " + this.weight;
   },
 };
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 12; i++) {
   cat.stay();
 }
-alert(cat);
